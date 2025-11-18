@@ -3,11 +3,11 @@ Put the results in this file. Additionally, provide any
 necessary documentation as files next to this file
 -->
 <results>
-    <firstname>VALUE</firstname>
-    <lastname>VALUE</lastname>
-    <studentId>VALUE</studentId>
-    <loc>VALUE</loc>
-    <nbloc>VALUE</nbloc>
-    <sloc>VALUE</sloc>
-    <lloc>VALUE</lloc>
+    <firstname>AMIR</firstname>
+    <lastname>HANNA</lastname>
+    <studentId>12443750</studentId>
+    <loc>18</loc>
+    <nbloc>15</nbloc>
+    <sloc>14</sloc>
+    <lloc>10</lloc>
 </results>
