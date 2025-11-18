@@ -1,0 +1,33 @@
+<!--
+Put the results in this file. Additionally, provide any
+necessary documentation as files next to this file
+-->
+<results>
+    <firstname>VALUE</firstname>
+    <lastname>VALUE</lastname>
+    <studentId>VALUE</studentId>
+
+    <dit>
+        <C>VALUE</C>
+        <G>VALUE</G>
+        <K>VALUE</K>
+    </dit>
+    <noc>
+        <A>VALUE</A>
+        <C>VALUE</C>
+        <J>VALUE</J>
+    </noc>
+    <cbo>
+        <C>VALUE</C>
+        <H>VALUE</H>
+    </cbo>
+    <rfc>
+        <C>VALUE</C>
+    </rfc>
+    <lcom>
+        <E>VALUE</E>
+    </lcom>
+    <wmc>
+        <G>VALUE</G>
+    </wmc>
+</results>

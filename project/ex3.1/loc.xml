@@ -1,0 +1,13 @@
+<!--
+Put the results in this file. Additionally, provide any
+necessary documentation as files next to this file
+-->
+<results>
+    <firstname>VALUE</firstname>
+    <lastname>VALUE</lastname>
+    <studentId>VALUE</studentId>
+    <loc>VALUE</loc>
+    <nbloc>VALUE</nbloc>
+    <sloc>VALUE</sloc>
+    <lloc>VALUE</lloc>
+</results>
