@@ -1,27 +1,25 @@
+import java.util.Objects;
+
 package at.aau.serg.exercises.persons;
 
-public enum Profession {
-    Developer,
-    Architect,
-    Tester
-}
-
-public class Person {
+public abstract class Person {
     private String firstname;
     private String lastname;
     private Integer age;
-    private Profession profession;
-    private String preferredProgrammingLanguage;
-    private String ide;
+    private String preferredLanguage;
+    private IDE ide;
     private boolean database;
     private String field;
     private String preferredTestingFramework;
 
-    public Person(String firstname, String lastname, Integer age, Profession profession) {
+    public Person(String firstname, String lastname, Integer age,
+                  String preferredLanguage, IDE ide, boolean database) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.age = age;
-        this.profession = Objects.requireNonNull(profession, "profession must not be null");
+        this.preferredLanguage = preferredLanguage;
+        this.setIde(ide);
+        this.database = database;
     }
 
     public String getFirstname() {
@@ -48,32 +46,22 @@ public class Person {
         this.age = age;
     }
 
-    public Profession getProfession() {
-        return profession;
+    public abstract Profession getProfession();
+
+    public String getPreferredLanguage() {
+        return preferredLanguage;
     }
 
-    public void setProfession(Profession profession) {
-        this.profession = java.util.Objects.requireNonNull(profession, "profession must not be null");
+    public void setPreferredLanguage(String preferredLanguage) {
+        this.preferredLanguage = preferredLanguage;
     }
 
-    public void setProfession(Profession profession) {
-        this.profession = profession;
-    }
-
-    public String getPreferredProgrammingLanguage() {
-        return preferredProgrammingLanguage;
-    }
-
-    public void setPreferredProgrammingLanguage(String preferredProgrammingLanguage) {
-        this.preferredProgrammingLanguage = preferredProgrammingLanguage;
-    }
-
-    public String getIde() {
+    public IDE getIde() {
         return ide;
     }
 
-    public void setIde(String ide) {
-        this.ide = ide;
+    public void setIde(IDE ide) {
+        this.ide = Objects.requireNonNull(ide, "ide must not be null");
     }
 
     public boolean isDatabase() {
@@ -100,14 +88,8 @@ public class Person {
         this.preferredTestingFramework = preferredTestingFramework;
     }
 
+    // subclasses should override
     public String getJobBeschreibung() {
-        switch (profession) {
-            case Profession.Developer:
-                return "Develops code.";
-            case Profession.Architect:
-                return "Designs the architecture of the project.";
-            case Profession.Tester:
-                return "Tests code.";
-        }
+        return "";
     }
 }
