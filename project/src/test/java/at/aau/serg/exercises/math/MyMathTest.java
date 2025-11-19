@@ -1,55 +1,57 @@
 package at.aau.serg.exercises.math;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class MyMathTest {
+    private MyMath myMath;
 
+    // a setup method to initialize MyMath instance before each test
+    @BeforeEach
+    void setUp() {
+        myMath = new MyMath();
+    }
+
+    // each method now gets has a name describing what it tests
     @Test
-    public void x() {
-        Double x=10d;
-        Double y=5d;
-        Double add=new MyMath().add(x,y);
-        Double sub=new MyMath().sub(x,y);
-        Double mul=new MyMath().mul(x,y);
-        Double div=new MyMath().div(x,y);
-
-        assertTrue(add.equals(new Double(15)));
-        assertTrue(sub.equals(new Double(5)));
-        assertTrue(mul.equals(new Double(50)));
-        assertTrue(div.equals(new Double(2)));
+    void addTest() {
+        // only one assertion per test method
+        double result = myMath.add(10d, 5d);
+        assertEquals(15.0, result, 1e-6);
     }
 
     @Test
-    public void x2() {
-        Fraction f = new Fraction(1,1);
-        MyMath mm = new MyMath();
-        Fraction reduced = mm.reduce(f);
-        assertEquals(new Integer(1),reduced.getNumerator());
-        assertEquals(new Integer(1),reduced.getDenumerator());
+    void subTest() {
+        double result = myMath.sub(10d, 5d);
+        assertEquals(5.0, result, 1e-6);
+    }
 
-        f = new Fraction(10,6);
-        mm = new MyMath();
-        reduced = mm.reduce(f);
-        assertEquals(new Integer(5),reduced.getNumerator());
-        assertEquals(new Integer(3),reduced.getDenumerator());
+    @Test
+    void mulTest() {
+        double result = myMath.mul(10d, 5d);
+        assertEquals(50.0, result, 1e-6);
+    }
 
-        f = new Fraction(10,5);
-        mm = new MyMath();
-        reduced = mm.reduce(f);
-        assertEquals(new Integer(2),reduced.getNumerator());
-        assertEquals(new Integer(1),reduced.getDenumerator());
+    @Test
+    void mulTest() {
+        double result = myMath.div(10d, 5d);
+        assertEquals(2.0, result, 1e-6);
+    }
 
-        f = new Fraction(10,5);
-        mm = new MyMath();
-        Double aDouble = mm.toDouble(f);
-        assertEquals(new Double(2),aDouble);
+    @Test
+    void reduceTenOverSixToFiveOverThreeTest() {
+        Fraction f = new Fraction(10, 6);
+        Fraction reduced = myMath.reduce(f);
+        assertEquals(5, reduced.getNumerator().intValue());
+        assertEquals(3, reduced.getDenumerator().intValue());
+    }
 
-        f = new Fraction(10,4);
-        mm = new MyMath();
-        aDouble = mm.toDouble(f);
-        assertEquals(new Double(2.5d),aDouble);
+    @Test
+    void toDoubleTest() {
+        Fraction f = new Fraction(10, 5);
+        double result = myMath.toDouble(f);
+        assertEquals(2.0, result, 1e-6);
     }
 }
