@@ -3,8 +3,8 @@ Put the results in this file. Additionally, provide any
 necessary documentation as files next to this file
 -->
 <results>
-    <firstname>VALUE</firstname>
-    <lastname>VALUE</lastname>
-    <studentId>VALUE</studentId>
-    <mccabecomplexity>VALUE</mccabecomplexity>
+    <firstname>AMIR</firstname>
+    <lastname>HANNA</lastname>
+    <studentId>12443750</studentId>
+    <mccabecomplexity>6</mccabecomplexity>
 </results>
