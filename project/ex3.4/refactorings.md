@@ -46,3 +46,18 @@ public void setProfession(Profession profession) {
 This is beneficial since we have to define behaviour that is specific to each subclass. For example, Architect can be set to APPLICATION or ENTERPRISE architect, and it makes sense to have this logic in the Architect subclass rather than in the Person class.
 
 The person class will be abstract, ensuring an instance can only be created from its subclasses, which will also ensure each instance has a profession determined by its class.
+
+---
+**Fifth**, we want to extract the field because it's specific to the Architect class.
+we'll create a new enum:
+```java
+public enum ArchitectField {
+    ENTERPRISE,
+    APPLICATION
+}
+```
+and remove all field references from Person class.
+Then, add the field to Architect class with its getter and setter.
+
+---
+**Sixth**, the tester class has its own specific logic which preferredTestingFramework, so we will do same steps as previous refactor.
