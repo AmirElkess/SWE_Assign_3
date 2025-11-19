@@ -44,3 +44,5 @@ public void setProfession(Profession profession) {
 ---
 **Fourth**, we can improve this class by making it inheritable and creating subclasses for each profession. This will allow us to move the getJobBeschreibung method to each subclass.
 This is beneficial since we have to define behaviour that is specific to each subclass. For example, Architect can be set to APPLICATION or ENTERPRISE architect, and it makes sense to have this logic in the Architect subclass rather than in the Person class.
+
+The person class will be abstract, ensuring an instance can only be created from its subclasses, which will also ensure each instance has a profession determined by its class.
