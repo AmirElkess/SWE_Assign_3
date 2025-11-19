@@ -9,7 +9,6 @@ public abstract class Person {
     private String preferredLanguage;
     private IDE ide;
     private boolean database;
-    private String field;
     private String preferredTestingFramework;
 
     public Person(String firstname, String lastname, Integer age,
@@ -70,14 +69,6 @@ public abstract class Person {
 
     public void setDatabase(boolean database) {
         this.database = database;
-    }
-
-    public String getField() {
-        return field;
-    }
-
-    public void setField(String field) {
-        this.field = field;
     }
 
     public String getPreferredTestingFramework() {
