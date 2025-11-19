@@ -1,20 +1,27 @@
 package at.aau.serg.exercises.persons;
 
+public enum Profession {
+    Developer,
+    Architect,
+    Tester
+}
+
 public class Person {
     private String firstname;
     private String lastname;
     private Integer age;
-    private string profession;
+    private Profession profession;
     private String preferredProgrammingLanguage;
     private String ide;
     private boolean database;
     private String field;
     private String preferredTestingFramework;
 
-    public Person(String firstname, String lastname, Integer age) {
+    public Person(String firstname, String lastname, Integer age, Profession profession) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.age = age;
+        this.profession = Objects.requireNonNull(profession, "profession must not be null");
     }
 
     public String getFirstname() {
@@ -46,11 +53,11 @@ public class Person {
     }
 
     public void setProfession(Profession profession) {
-        this.profession = profession;
+        this.profession = java.util.Objects.requireNonNull(profession, "profession must not be null");
     }
 
-    public void setProfession(String profession) {
-        this.profession = Profession.fromString(profession);
+    public void setProfession(Profession profession) {
+        this.profession = profession;
     }
 
     public String getPreferredProgrammingLanguage() {
@@ -94,19 +101,13 @@ public class Person {
     }
 
     public String getJobBeschreibung() {
-        return profession != null ? profession.getDescription() : "";
-    }
-
-    public String getJobBeschreibung() {
         switch (profession) {
-            case "Developer":
+            case Profession.Developer:
                 return "Develops code.";
-            case "Architect":
+            case Profession.Architect:
                 return "Designs the architecture of the project.";
-            case "Tester":
+            case Profession.Tester:
                 return "Tests code.";
-            default:
-                return "";
         }
     }
 }
